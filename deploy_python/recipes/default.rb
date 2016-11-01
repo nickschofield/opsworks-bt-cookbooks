@@ -3,7 +3,7 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-
+execute "pip_install" do
 for p in
 ["apt-xapian-index==0.45",
 "awscli==1.9.7",
@@ -40,5 +40,6 @@ for p in
 "urllib3==1.7.1",
 "virtualenv==13.1.2",
 "zope.interface==4.0.5"] do
-  command "pip install #{p}"
+    command "pip install #{p}"
+  end
 end
