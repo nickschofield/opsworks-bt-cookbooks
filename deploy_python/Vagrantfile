@@ -1,8 +1,0 @@
-Vagrant.configure("1") do |config|
-  config.vm.box = "hashicorp/precise64"
-  config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "/home/nick/.chef/deploy_python"
-    chef.add_recipe("default")
-  end
-  config.vm.network :forwarded_port, guest: 80, host: 11180
-end
